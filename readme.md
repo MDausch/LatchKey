@@ -3,7 +3,7 @@
 Move the Face-ID glyph to the statusbar
 iOS 11 Only
 
-##Installation 
+## Installation 
 LatchKey is in a pre-release beta. Once a stable jailbreak that includes Cydia is released, this package will be released on a public repo. Electra users can find the dlyb and plist here: [LatchKey.zip] (https://github.com/MDausch/LatchKey/releases)
 
 ## Notes
