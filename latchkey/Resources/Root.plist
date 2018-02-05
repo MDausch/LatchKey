@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+        <!-- Tweak Kill Switch, uses enabled -->
+
+        <dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>headerCellClass</key>
+			<string>PSHeaderCell</string>
+		</dict>
+
+        <dict>
+          <key>cell</key>                   <string>PSSwitchCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>default</key>                <true/>
+          <key>defaults</key>               <string>ch.mdaus.latchkey</string>
+          <key>key</key>                    <string>enabled</string>
+          <key>label</key>                  <string>Enable</string>
+
+        </dict>
+
+        <dict>
+          <key>cell</key>                   <string>PSLinkListCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>defaults</key>               <string>ch.mdaus.latchkey</string>
+          <key>default</key>                <string>1</string>
+          <key>key</key>                    <string>option</string>
+          <key>detail</key>              	<string>PSListItemsController</string>
+          <key>label</key>                  <string>Position</string>
+          <key>validTitles</key>
+        	<array>
+        	  <string>Status Bar</string>
+        	  <string>Compact Status Bar (right)</string>
+              <string>Compact Status Bar (left)</string>
+    		  <string>Hidden</string>
+              <string>Custom</string>
+    		</array>
+    	  <key>validValues</key>
+			<array>
+		      <integer>1</integer>
+			  <integer>2</integer>
+			  <integer>3</integer>
+    		  <integer>4</integer>
+              <integer>5</integer>
+    		</array>
+        </dict>
+
+
+        <dict>
+		  <key>cell</key>                   <string>PSGroupCell</string>
+		  <key>label</key>                  <string>Custom Positioning</string>
+		</dict>
+
+        <dict>
+          <key>cell</key>                   <string>PSSTaticTextCell</string>
+          <key>label</key>                  <string>X Position:</string>
+        </dict>
+
+        <dict>
+          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>default</key>                <string>176</string>
+          <key>defaults</key>               <string>ch.mdaus.latchkey</string>
+          <key>key</key>                    <string>xPos</string>
+          <key>min</key>                    <string>0.0</string>
+          <key>max</key>                    <string>375</string>
+          <key>showValue</key>              <true/>
+        </dict>
+
+
+        <!-- Ypos -->
+        <dict>
+          <key>cell</key>                   <string>PSSTaticTextCell</string>
+          <key>label</key>                  <string>Y Position:</string>
+        </dict>
+
+
+        <dict>
+          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>default</key>                <string>53</string>
+          <key>defaults</key>               <string>ch.mdaus.latchkey</string>
+          <key>key</key>                    <string>yPos</string>
+          <key>min</key>                    <string>0.0</string>
+          <key>max</key>                    <string>812</string>
+          <key>showValue</key>              <true/>
+        </dict>
+
+
+        <!-- Scale -->
+        <dict>
+          <key>cell</key>                   <string>PSSTaticTextCell</string>
+          <key>label</key>                  <string>Scale</string>
+        </dict>
+
+        <dict>
+          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>default</key>                <string>1.0</string>
+          <key>defaults</key>               <string>ch.mdaus.latchkey</string>
+          <key>key</key>                    <string>scale</string>
+          <key>min</key>                    <string>0.0</string>
+          <key>max</key>                    <string>2.0</string>
+          <key>showValue</key>              <true/>
+        </dict>
+
+        <!-- Just a space in the settings -->
+        <dict>
+		  <key>cell</key>                   <string>PSGroupCell</string>
+		  <key>label</key>                  <string>Misc</string>
+		</dict>
+        <dict>
+          <key>cell</key>                   <string>PSSwitchCell</string>
+          <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>default</key>                <false/>
+          <key>defaults</key>               <string>ch.mdaus.latchkey.settingschanged</string>
+          <key>key</key>                    <string>hideCarrier</string>
+          <key>label</key>                  <string>Hide Carrier</string>
+        </dict>
+
+
+        <dict>
+		  <key>cell</key>                   <string>PSGroupCell</string>
+		  <key>label</key>                  <string>Some changes may require a respring</string>
+		</dict>
+        <dict>
+          <key>cell</key>                    <string>PSButtonCell</string>
+          <key>label</key>                   <string>Respring</string>
+          <key>action</key>                  <string>respring</string>
+        </dict>
+
+        <!-- Just a space in the settings -->
+        <dict>
+          <key>cell</key>                    <string>PSGroupCell</string>
+        </dict>
+
+
+        <dict>
+          <key>action</key>                   <string>goToTwitter</string>
+          <key>cell</key>                     <string>PSButtonCell</string>
+          <key>icon</key>                     <string>twitter.png</string>
+          <key>label</key>     	              <string>@M_Dausch</string>
+        </dict>
+
+        <dict>
+          <key>action</key>                   <string>goToGithub</string>
+          <key>cell</key>                     <string>PSButtonCell</string>
+          <key>icon</key>                     <string>github.png</string>
+          <key>label</key>     	              <string>View on Github</string>
+        </dict>
+
+	</array>
+	<key>title</key>
+	<string>LatchKey</string>
+</dict>
+</plist>
