@@ -14,7 +14,6 @@
 static NSMutableDictionary *settings;
 BOOL enabled = YES;
 BOOL hideCarrier = NO;
-
 NSInteger option = 1;
 float xPos =  176.0;
 float yPos =  53.0;
@@ -37,16 +36,6 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
   refreshPrefs();
 }
 
-/*
-//We need to set the window level higher than the status bar to make
-//the lockscreen window go above notchless like tweaks
-%hook SBCoverSheetWindow
--(BOOL)becomeFirstResponder {
-    self.windowLevel = UIWindowLevelStatusBar + 75.0;
-    return %orig;
-}
-%end
-*/
 
 //Override Face ID View
 %hook SBUIProudLockIconView
