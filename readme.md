@@ -11,7 +11,12 @@ iOS 11 Only
   * Face ID [Screenshot](https://imgur.com/a/6fe3f)
   * Siri Blob [Screenshot](https://imgur.com/a/BGvHJ)
 * Hide Carrier ( this will hide the carrier in the control center)
-  
+
+
+## Themes
+If you want to create a theme for Latchkey, I'll have a more detailed explanation when I submit to bigboss,
+but for now look under /Library/Application Support/Latchkey/Themes, and use the existing themes as a guide.
+Or send me a message with a nice gif, and I'll do my best to add it.
 
 ## Installation 
 
