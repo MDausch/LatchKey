@@ -7,11 +7,9 @@
         <!-- Tweak Kill Switch, uses enabled -->
 
         <dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>headerCellClass</key>
-			<string>PSHeaderCell</string>
-		</dict>
+            <key>cell</key>                 <string>PSGroupCell</string>
+            <key>headerCellClass</key>      <string>mdLKHeaderCell</string>
+        </dict>
 
         <dict>
           <key>cell</key>                   <string>PSSwitchCell</string>
@@ -49,6 +47,17 @@
     		</array>
         </dict>
 
+        <dict>
+		  <key>cell</key>                     <string>PSLinkListCell</string>
+			<key>detail</key>                 <string>PSListItemsController</string>
+			<key>defaults</key>               <string>ch.mdaus.latchkey</string>
+			<key>key</key>                    <string>currentTheme</string>
+		 	<key>label</key>                  <string>Theme</string>
+			<key>valuesDataSource</key>       <string>themeBundleToUse</string>
+			<key>titlesDataSource</key>       <string>themeDisplayTitles</string>
+			<key>default</key>                <string>apple default</string>
+            <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
+		</dict>
 
         <dict>
 		  <key>cell</key>                   <string>PSGroupCell</string>
@@ -56,57 +65,46 @@
 		</dict>
 
         <dict>
-          <key>cell</key>                   <string>PSSTaticTextCell</string>
+          <key>cell</key>                   <string>PSEditTextCell</string>
           <key>label</key>                  <string>X Position:</string>
-        </dict>
-
-        <dict>
-          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>prompt</key>                 <string>Enter X Position</string>
+          <key>bestGuess </key>             <string>176</string>
+          <key>placeholder</key>            <string>176</string>
+          <key>isNumeric</key>              <true/>
           <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
-          <key>default</key>                <string>176</string>
           <key>defaults</key>               <string>ch.mdaus.latchkey</string>
           <key>key</key>                    <string>xPos</string>
-          <key>min</key>                    <string>0.0</string>
-          <key>max</key>                    <string>375</string>
-          <key>showValue</key>              <true/>
         </dict>
 
-
-        <!-- Ypos -->
         <dict>
-          <key>cell</key>                   <string>PSSTaticTextCell</string>
+          <key>cell</key>                   <string>PSEditTextCell</string>
           <key>label</key>                  <string>Y Position:</string>
-        </dict>
-
-
-        <dict>
-          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>prompt</key>                 <string>Enter Y Position</string>
+          <key>bestGuess </key>             <string>53</string>
+          <key>isNumeric</key>              <true/>
+          <key>placeholder</key>            <string>53</string>
           <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
-          <key>default</key>                <string>53</string>
           <key>defaults</key>               <string>ch.mdaus.latchkey</string>
           <key>key</key>                    <string>yPos</string>
-          <key>min</key>                    <string>0.0</string>
-          <key>max</key>                    <string>812</string>
-          <key>showValue</key>              <true/>
         </dict>
 
 
-        <!-- Scale -->
         <dict>
-          <key>cell</key>                   <string>PSSTaticTextCell</string>
-          <key>label</key>                  <string>Scale</string>
-        </dict>
-
-        <dict>
-          <key>cell</key>                   <string>PSSliderCell</string>
+          <key>cell</key>                   <string>PSEditTextCell</string>
+          <key>label</key>                  <string>Scale:</string>
+          <key>bestGuess </key>             <string>1.0</string>
+          <key>prompt</key>                 <string>Enter Scale Factor</string>
+          <key>isDecimalPad</key>           <true/>
           <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
-          <key>default</key>                <string>1.0</string>
           <key>defaults</key>               <string>ch.mdaus.latchkey</string>
           <key>key</key>                    <string>scale</string>
-          <key>min</key>                    <string>0.0</string>
-          <key>max</key>                    <string>2.0</string>
-          <key>showValue</key>              <true/>
         </dict>
+        <dict>
+          <key>action</key>                   <string>savePrefs</string>
+          <key>cell</key>                     <string>PSButtonCell</string>
+          <key>label</key>     	              <string>Save Values</string>
+        </dict>
+
 
         <!-- Just a space in the settings -->
         <dict>

@@ -1,11 +1,13 @@
 #include "mdlkRootListController.h"
-#define latchKeyPrefs @"/var/mobile/Library/Preferences/ch.mdaus.latchkey.plist"
+#define kLatchKeyPrefs @"/var/mobile/Library/Preferences/ch.mdaus.latchkey.plist"
+#define kThemeBundlePath @"/Library/Application Support/LatchKey/Themes/"
+
 
 
 @implementation mdlkRootListController
 
 -(id)readPreferenceValue:(PSSpecifier *)specifier {
-    NSDictionary *POSettings = [NSDictionary dictionaryWithContentsOfFile:latchKeyPrefs];
+    NSDictionary *POSettings = [NSDictionary dictionaryWithContentsOfFile:kLatchKeyPrefs];
     
     if(!POSettings[specifier.properties[@"key"]]) {
         return specifier.properties[@"default"];
@@ -16,16 +18,16 @@
 
 -(void)setPreferenceValue:(id)value specifier:(PSSpecifier*) specifier {
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-    [defaults addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:latchKeyPrefs]];
+    [defaults addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:kLatchKeyPrefs]];
     [defaults setObject:value forKey:specifier.properties[@"key"]];
-    [defaults writeToFile:latchKeyPrefs atomically:YES];
+    [defaults writeToFile:kLatchKeyPrefs atomically:YES];
     CFStringRef CPPost = (CFStringRef)CFBridgingRetain(specifier.properties[@"PostNotification"]);
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CPPost, NULL, NULL, YES);
 }
 
 - (NSArray *)specifiers {
     if (!_specifiers) {
-        _specifiers = [[self loadSpecifiersFromPlistName:@"Root" target:self] retain];
+        _specifiers = [[self loadSpecifiersFromPlistName:@"latchkeyPrefsMain" target:self] retain];
     }
     
     return _specifiers;
@@ -43,6 +45,11 @@
     
 }
 
+-(void)savePrefs{
+    [self.view endEditing:YES];
+}
+
+
 -(void)goToTwitter{
     NSString *user = @"m_dausch";
     if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetbot:"]])
@@ -54,17 +61,43 @@
     
 }
 
+//Theme selectors
+-(NSArray *)themeDisplayTitles {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray* files = [fm contentsOfDirectoryAtPath:kThemeBundlePath error:nil];
+    NSMutableArray *listOfFiles = [files mutableCopy];
+    
+    for (int i = 0; i < listOfFiles.count; ++i) {
+        NSString *entry = [listOfFiles objectAtIndex:i];
+        entry = [entry stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+        entry = [entry stringByReplacingOccurrencesOfString:@".bundle" withString:@""];
+        [listOfFiles replaceObjectAtIndex:i withObject:entry];
+    }
+    
+    return listOfFiles;
+}
+
+
+-(NSArray *)themeBundleToUse {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray* files = [fm contentsOfDirectoryAtPath:kThemeBundlePath error:nil];
+    NSMutableArray *listOfFiles = [files mutableCopy];
+    
+    return listOfFiles;
+}
+
+
 @end
 
 
 
-@implementation PSHeaderCell
+
+
+@implementation mdLKHeaderCell
 - (id)initWithSpecifier:(PSSpecifier *)specifier {
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"headerCell" specifier:specifier];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"latchKeyHeader" specifier:specifier];
     if (self) {
-        //headerImageView = [[UIImageView alloc] initWithFrame:[self frame]];
-        UIImage *header = [[UIImage alloc] initWithContentsOfFile:[[NSBundle bundleWithPath:@"/bootstrap/Library/PreferenceBundles/LatchKey.bundle"] pathForResource:@"header" ofType:@"png"]];
-        //headerImageView.layer.masksToBounds = YES;
+        UIImage *header = [[UIImage alloc] initWithContentsOfFile:[[NSBundle bundleWithPath:@"/Library/PreferenceBundles/LatchKey.bundle"] pathForResource:@"mdlatchkeyHeader" ofType:@"png"]];
         headerImageView = [[UIImageView alloc] initWithImage:header];
         headerImageView.contentMode = UIViewContentModeScaleAspectFit;
 
@@ -78,5 +111,5 @@
     // Return a custom cell height.
     return 200.0f;
 }
-@end
 
+@end

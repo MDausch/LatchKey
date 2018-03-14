@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<caml xmlns="http://www.apple.com/CoreAnimation/1.0">
+  <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 69 114" contentsFormat="RGBA8" name="grp" position="34.5 60">
+    <sublayers>
+      <CALayer id="#3" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 200 200" contentsFormat="RGBA8" geometryFlipped="1" name="Lock_Container" position="34 50">
+	<sublayers>
+	  <CALayer id="#2" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 200 200" contentsFormat="RGBA8" name="Spring" position="100 100">
+	    <sublayers>
+	      <CALayer id="#1" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 200 200" contentsFormat="RGBA8" name="sequence" opacity="1" position="100 100" transform="">
+		<contents type="CGImage" src="assets/Siri_Blob_0.png"/>
+		<sublayers>
+		  <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 69 120" contentsFormat="RGBA8" name="Base" position="100 100">
+		    <sublayers>
+		      <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 200 200" contentsFormat="RGBA8" name="lockBaseFINAL@3x.png" position="34.5 60">
+			<contents type="CGImage" src="assets/empty.png"/>
+		      </CALayer>
+		    </sublayers>
+		  </CALayer>
+		</sublayers>
+	      </CALayer>
+	    </sublayers>
+	  </CALayer>
+	</sublayers>
+      </CALayer>
+    </sublayers>
+    <states>
+      <LKState name="Sleep">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#1" keyPath="transform.scale.xy">
+	    <value type="real" value="0.75"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#1" keyPath="opacity">
+	    <value type="integer" value="0"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Locked"/>
+      <LKState name="Unlocked">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#1" keyPath="contents">
+	    <value type="CGImage" src="assets/Siri_Blob_47.png"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Error">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#2" keyPath="position.x">
+	    <value type="integer" value="140"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="position.x">
+	    <value type="integer" value="-6"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+    </states>
+    <stateTransitions>
+      <LKStateTransition fromState="*" toState="Unlocked">
+	<elements>
+	  <LKStateTransitionElement final="false" key="contents" targetId="#1">
+	    <animation type="CAKeyframeAnimation" calculationMode="discrete" keyPath="contents" duration="1" fillMode="backwards" timingFunction="linear">
+	      <keyTimes>
+		<integer value="0"/>
+		<real value="0.01666666666"/>
+		<real value="0.03333333333"/>
+		<real value="0.05"/>
+		<real value="0.06666666666"/>
+		<real value="0.08333333333"/>
+		<real value="0.1"/>
+		<real value="0.116666666667"/>
+		<real value="0.133333333333"/>
+		<real value="0.15"/>
+		<real value="0.166666666667"/>
+		<real value="0.183333333333"/>
+		<real value="0.2"/>
+		<real value="0.216666666667"/>
+		<real value="0.233333333333"/>
+		<real value="0.25"/>
+		<real value="0.266666666667"/>
+		<real value="0.283333333333"/>
+		<real value="0.3"/>
+		<real value="0.316666666667"/>
+		<real value="0.333333333333"/>
+		<real value="0.35"/>
+		<real value="0.366666666667"/>
+		<real value="0.383333333333"/>
+		<real value="0.4"/>
+		<real value="0.416666666667"/>
+		<real value="0.433333333333"/>
+		<real value="0.45"/>
+		<real value="0.466666666667"/>
+		<real value="0.483333333333"/>
+		<real value="0.5"/>
+		<real value="0.516666666667"/>
+		<real value="0.533333333333"/>
+		<real value="0.55"/>
+		<real value="0.566666666667"/>
+		<real value="0.583333333333"/>
+		<real value="0.6"/>
+		<real value="0.616666666667"/>
+		<real value="0.633333333333"/>
+		<real value="0.65"/>
+		<real value="0.666666666667"/>
+		<real value="0.683333333333"/>
+		<real value="0.7"/>
+		<real value="0.716666666667"/>
+		<real value="0.733333333333"/>
+		<real value="0.75"/>
+		<real value="0.766666666667"/>
+        <real value="0.783333333333"/>
+	      </keyTimes>
+	      <values>
+        <CGImage src="assets/Siri_Blob_0.png"/>
+		<CGImage src="assets/Siri_Blob_1.png"/>
+		<CGImage src="assets/Siri_Blob_2.png"/>
+		<CGImage src="assets/Siri_Blob_3.png"/>
+		<CGImage src="assets/Siri_Blob_4.png"/>
+		<CGImage src="assets/Siri_Blob_5.png"/>
+		<CGImage src="assets/Siri_Blob_6.png"/>
+		<CGImage src="assets/Siri_Blob_7.png"/>
+		<CGImage src="assets/Siri_Blob_8.png"/>
+		<CGImage src="assets/Siri_Blob_9.png"/>
+		<CGImage src="assets/Siri_Blob_10.png"/>
+		<CGImage src="assets/Siri_Blob_11.png"/>
+		<CGImage src="assets/Siri_Blob_12.png"/>
+		<CGImage src="assets/Siri_Blob_13.png"/>
+		<CGImage src="assets/Siri_Blob_14.png"/>
+		<CGImage src="assets/Siri_Blob_15.png"/>
+		<CGImage src="assets/Siri_Blob_16.png"/>
+		<CGImage src="assets/Siri_Blob_17.png"/>
+		<CGImage src="assets/Siri_Blob_18.png"/>
+		<CGImage src="assets/Siri_Blob_19.png"/>
+		<CGImage src="assets/Siri_Blob_20.png"/>
+		<CGImage src="assets/Siri_Blob_21.png"/>
+		<CGImage src="assets/Siri_Blob_22.png"/>
+		<CGImage src="assets/Siri_Blob_23.png"/>
+		<CGImage src="assets/Siri_Blob_24.png"/>
+		<CGImage src="assets/Siri_Blob_25.png"/>
+		<CGImage src="assets/Siri_Blob_26.png"/>
+		<CGImage src="assets/Siri_Blob_27.png"/>
+		<CGImage src="assets/Siri_Blob_28.png"/>
+		<CGImage src="assets/Siri_Blob_29.png"/>
+		<CGImage src="assets/Siri_Blob_30.png"/>
+		<CGImage src="assets/Siri_Blob_31.png"/>
+		<CGImage src="assets/Siri_Blob_32.png"/>
+		<CGImage src="assets/Siri_Blob_33.png"/>
+		<CGImage src="assets/Siri_Blob_34.png"/>
+		<CGImage src="assets/Siri_Blob_35.png"/>
+		<CGImage src="assets/Siri_Blob_36.png"/>
+		<CGImage src="assets/Siri_Blob_37.png"/>
+		<CGImage src="assets/Siri_Blob_38.png"/>
+		<CGImage src="assets/Siri_Blob_39.png"/>
+		<CGImage src="assets/Siri_Blob_40.png"/>
+		<CGImage src="assets/Siri_Blob_41.png"/>
+		<CGImage src="assets/Siri_Blob_42.png"/>
+		<CGImage src="assets/Siri_Blob_43.png"/>
+		<CGImage src="assets/Siri_Blob_44.png"/>
+		<CGImage src="assets/Siri_Blob_45.png"/>
+		<CGImage src="assets/Siri_Blob_46.png"/>
+		<CGImage src="assets/Siri_Blob_47.png"/>
+	      </values>
+	    </animation>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Unlocked" toState="*">
+	<elements/>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Sleep">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#1">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#1">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Sleep" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#1">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#1">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Error">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.2" fillMode="both" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CASpringAnimation" damping="40" mass="3" stiffness="2200" keyPath="position.x" beginTime="0.075" duration="0.78" fillMode="both" speed="1.399999976158"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Error" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+    </stateTransitions>
+  </CALayer>
+</caml>

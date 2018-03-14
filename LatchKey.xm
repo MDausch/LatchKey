@@ -1,15 +1,19 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UiKit.h>
-#import <UIKit/UIWindow+Private.h>
 
 #define latchKeyPrefs @"/var/mobile/Library/Preferences/ch.mdaus.latchkey.plist"
+#define kThemeBundlePath @"/Library/Application Support/LatchKey/Themes/"
 
 @interface SBUIProudLockIconView : UIView
 -(void)_configureAutolayoutFlagsNeedingLayout:(BOOL)arg1;
 @end
 
-@interface SBCoverSheetWindow : UIWindow
+@interface SBLockScreenManager : NSObject
++ (id)sharedInstance;
+- (void)tapToWakeControllerDidRecognizeWakeGesture:(id)arg1;
+- (void)lockScreenViewControllerRequestsUnlock;
 @end
+
 
 static NSMutableDictionary *settings;
 BOOL enabled = YES;
@@ -18,7 +22,9 @@ NSInteger option = 1;
 float xPos =  176.0;
 float yPos =  53.0;
 float scale = 1.0;
-
+NSString *currentTheme;
+NSString *currentThemeName = @"duck";
+NSBundle *themeBundle = nil;
 
 void refreshPrefs() {
   settings = nil;
@@ -29,6 +35,8 @@ void refreshPrefs() {
   if([settings objectForKey:@"xPos"])xPos = [[settings objectForKey:@"xPos"] floatValue];
   if([settings objectForKey:@"yPos"])yPos = [[settings objectForKey:@"yPos"] floatValue];
   if([settings objectForKey:@"scale"])scale = [[settings objectForKey:@"scale"] floatValue];
+  if([settings objectForKey:@"currentTheme"])currentTheme = [[settings objectForKey:@"currentTheme"] stringValue];
+
 }
 
 
@@ -44,26 +52,24 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
 
     //make sure our kill switch isnt enabled
     if(enabled){
-        //Now we override the frame to move the glyph and shrink it down
-        //[self setAlpha:1.0f];
-        //self.layer.zPosition = 100000;
+
+        // Decide where to place the lock based on user choice
         switch(option){
-            case(1):
+            case(1): // Status bar
                 self.frame = CGRectMake(35,10,12,20);
                 break;
-            case(2):
+            case(2): //Compact Status Bar (right of carrier)
                 self.frame = CGRectMake(72,16,6.5,13);
                 break;
-            case(3):
+            case(3): //Compact Status Bar (right of carrier)
                 self.frame = CGRectMake(12,16,6.5,13);
                 break;
-            case(4):
+            case(4): // Hidden
                 self.frame = CGRectMake(0,0,0,0);
                 break;
-            case(5):
+            case(5): //Custom position
                 self.frame = CGRectMake(xPos,yPos,23 * scale,40 * scale);
             default:;
-                //self.frame = CGRectMake(176,35,23,40);
 
         }
 
@@ -79,11 +85,7 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
             }
             super = super.superview; //Go up another level
         }
-        /*
-        super = self.superview;
-        [self removeFromSuperview];
-        [super addSubview: self];
-        */
+
         //Remove all the constraints our object holds
         [self removeConstraints:self.constraints];
         self.translatesAutoresizingMaskIntoConstraints = YES;
@@ -101,6 +103,50 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
     %orig(arg1); //We dont need to modify anything, call original method
 }
 %end
+
+//Here we add a gesture for tapping the icon to prompt for unlock
+%hook SBDashBoardView
+-(void)setProudLockIconView:(id)arg1{
+
+    //Grab the view and store it so we can add to it
+    SBUIProudLockIconView *glyphView = arg1;
+    glyphView.userInteractionEnabled = YES;
+
+    //Create our gesture recognizer and add it to the view
+    UITapGestureRecognizer *glyphTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(glyphWantsUnlock)];
+    glyphTap.numberOfTapsRequired = 1;
+    [glyphView addGestureRecognizer:glyphTap];
+
+    %orig(glyphView);
+
+}
+
+//Our tap handler to prompt for unlock
+%new
+- (void)glyphWantsUnlock {
+    [[NSClassFromString(@"SBLockScreenManager") sharedInstance] lockScreenViewControllerRequestsUnlock];
+}
+
+%end
+
+
+//Theme Stuff
+%hook SBUICAPackageView
+-(id)initWithPackageName:(id)arg1 inBundle:(id)arg2{
+
+    //Create our theme based off of user choice
+    themeBundle = [[[NSBundle alloc] initWithPath:[NSString stringWithFormat:@"%@/%@", kThemeBundlePath, currentTheme]] autorelease];
+
+    //We need the name, but minus the .bundle to properly call the method
+    currentThemeName = [currentTheme stringByReplacingOccurrencesOfString:@".bundle" withString:@""];
+
+    //Return our custom theme and bundle
+    return %orig(currentThemeName,themeBundle);
+}
+
+
+%end
+
 
 //Override Carrier Name
 %hook SBStatusBarStateAggregator
