@@ -1,10 +1,10 @@
 Package: ch.mdaus.latchkey
 Name: LatchKey
-Depends: firmware (>= 11.0), mobilesubstrate
-Version: 1.0
+Depends: mobilesubstrate, org.thebigboss.libcolorpicker
+Version: 2.1
 Architecture: iphoneos-arm
-Description: Move the Face-ID lock glyph to the status bar for a cleaner look.
-Depiction: http://mdaus.ch/repo/depictions/?p=ch.mdaus.latchkey
+Description: Move and theme the Face-ID lock glyph 
+Depiction: https://repo.daus.ch/depictions/?p=ch.mdaus.latchkey
 Maintainer: Maxwell Dausch <max.dausch@gmail.com>
 Author: Maxwell Dausch <max.dausch@gmail.com>
 Section: Tweaks

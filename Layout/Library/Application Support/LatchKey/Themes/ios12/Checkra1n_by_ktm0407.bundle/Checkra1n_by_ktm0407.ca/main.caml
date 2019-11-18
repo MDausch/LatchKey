@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<caml xmlns="http://www.apple.com/CoreAnimation/1.0">
+  <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 69.0 100.0" contentsFormat="RGBA8" name="root" position="34.5 50.0">
+    <sublayers>
+      <CALayer id="#3" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" geometryFlipped="1" name="container" position="34.5 50.0">
+	      <sublayers>
+	        <CALayer id="#2" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="shake" position="73.5 66.0">
+	          <sublayers>
+                <CALayer id="#4" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 243.0 228.0" contentsFormat="RGBA8" name="shadow" opacity="1" position="73.5 66.0">
+                  <contents type="CGImage" src="assets/shadow-0.png"/>
+                </CALayer>
+	            <CALayer id="#1" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="shackle" opacity="1" position="73.5 66.0">
+		          <contents type="CGImage" src="assets/shackle-0.png"/>
+		          <sublayers>
+                    <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="body" position="73.5 66.0">
+                      <contents type="CGImage" src="assets/base.png"/>
+                    </CALayer>
+		          </sublayers>
+	            </CALayer>
+	          </sublayers>
+	        </CALayer>
+	      </sublayers>
+        </CALayer>
+      </sublayers>
+    <states>
+      <LKState name="Sleep">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="transform.scale.xy">
+	    <value type="real" value="0.75"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="opacity">
+	    <value type="integer" value="0"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Locked"/>
+      <LKState name="Unlocked">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#1" keyPath="contents">
+	    <value type="CGImage" src="assets/shackle-50.png"/>
+	  </LKStateSetValue>
+      <LKStateSetValue final="false" targetId="#4" keyPath="contents">
+          <value type="CGImage" src="assets/shadow-50.png"/>
+      </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Error">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#2" keyPath="position.x">
+	    <value type="real" value="113.5"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="position.x">
+	    <value type="real" value="-5.5"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+    </states>
+    <stateTransitions>
+      <LKStateTransition fromState="*" toState="Unlocked">
+	<elements>
+	  <LKStateTransitionElement final="false" key="contents" targetId="#1">
+	    <animation type="CAKeyframeAnimation" calculationMode="discrete" keyPath="contents" duration="1" fillMode="backwards" timingFunction="linear">
+	      <keyTimes>
+                <real value="0.0"/>
+                <real value="0.016666666666666666"/>
+                <real value="0.03333333333333333"/>
+                <real value="0.05"/>
+                <real value="0.06666666666666667"/>
+                <real value="0.08333333333333333"/>
+                <real value="0.1"/>
+                <real value="0.11666666666666667"/>
+                <real value="0.13333333333333333"/>
+                <real value="0.15"/>
+                <real value="0.16666666666666666"/>
+                <real value="0.18333333333333332"/>
+                <real value="0.2"/>
+                <real value="0.21666666666666667"/>
+                <real value="0.23333333333333334"/>
+                <real value="0.25"/>
+                <real value="0.26666666666666666"/>
+                <real value="0.2833333333333333"/>
+                <real value="0.3"/>
+                <real value="0.31666666666666665"/>
+                <real value="0.3333333333333333"/>
+                <real value="0.35"/>
+                <real value="0.36666666666666664"/>
+                <real value="0.38333333333333336"/>
+                <real value="0.4"/>
+                <real value="0.4166666666666667"/>
+                <real value="0.43333333333333335"/>
+                <real value="0.45"/>
+                <real value="0.4666666666666667"/>
+                <real value="0.48333333333333334"/>
+                <real value="0.5"/>
+                <real value="0.5166666666666667"/>
+                <real value="0.5333333333333333"/>
+                <real value="0.55"/>
+                <real value="0.5666666666666667"/>
+                <real value="0.5833333333333334"/>
+                <real value="0.6"/>
+                <real value="0.6166666666666667"/>
+                <real value="0.6333333333333333"/>
+                <real value="0.65"/>
+                <real value="0.6666666666666666"/>
+                <real value="0.6833333333333333"/>
+                <real value="0.7"/>
+                <real value="0.7166666666666667"/>
+                <real value="0.7333333333333333"/>
+                <real value="0.75"/>
+                <real value="0.7666666666666667"/>
+                <real value="0.7833333333333333"/>
+                <real value="0.8"/>
+                <real value="0.8166666666666667"/>
+                <real value="0.8333333333333334"/>
+
+	      </keyTimes>
+	      <values>
+                <CGImage src="assets/shackle-0.png"/>
+                <CGImage src="assets/shackle-1.png"/>
+                <CGImage src="assets/shackle-2.png"/>
+                <CGImage src="assets/shackle-3.png"/>
+                <CGImage src="assets/shackle-4.png"/>
+                <CGImage src="assets/shackle-5.png"/>
+                <CGImage src="assets/shackle-6.png"/>
+                <CGImage src="assets/shackle-7.png"/>
+                <CGImage src="assets/shackle-8.png"/>
+                <CGImage src="assets/shackle-9.png"/>
+                <CGImage src="assets/shackle-10.png"/>
+                <CGImage src="assets/shackle-11.png"/>
+                <CGImage src="assets/shackle-12.png"/>
+                <CGImage src="assets/shackle-13.png"/>
+                <CGImage src="assets/shackle-14.png"/>
+                <CGImage src="assets/shackle-15.png"/>
+                <CGImage src="assets/shackle-16.png"/>
+                <CGImage src="assets/shackle-17.png"/>
+                <CGImage src="assets/shackle-18.png"/>
+                <CGImage src="assets/shackle-19.png"/>
+                <CGImage src="assets/shackle-20.png"/>
+                <CGImage src="assets/shackle-21.png"/>
+                <CGImage src="assets/shackle-22.png"/>
+                <CGImage src="assets/shackle-23.png"/>
+                <CGImage src="assets/shackle-24.png"/>
+                <CGImage src="assets/shackle-25.png"/>
+                <CGImage src="assets/shackle-26.png"/>
+                <CGImage src="assets/shackle-27.png"/>
+                <CGImage src="assets/shackle-28.png"/>
+                <CGImage src="assets/shackle-29.png"/>
+                <CGImage src="assets/shackle-30.png"/>
+                <CGImage src="assets/shackle-31.png"/>
+                <CGImage src="assets/shackle-32.png"/>
+                <CGImage src="assets/shackle-33.png"/>
+                <CGImage src="assets/shackle-34.png"/>
+                <CGImage src="assets/shackle-35.png"/>
+                <CGImage src="assets/shackle-36.png"/>
+                <CGImage src="assets/shackle-37.png"/>
+                <CGImage src="assets/shackle-38.png"/>
+                <CGImage src="assets/shackle-39.png"/>
+                <CGImage src="assets/shackle-40.png"/>
+                <CGImage src="assets/shackle-41.png"/>
+                <CGImage src="assets/shackle-42.png"/>
+                <CGImage src="assets/shackle-43.png"/>
+                <CGImage src="assets/shackle-44.png"/>
+                <CGImage src="assets/shackle-45.png"/>
+                <CGImage src="assets/shackle-46.png"/>
+                <CGImage src="assets/shackle-47.png"/>
+                <CGImage src="assets/shackle-48.png"/>
+                <CGImage src="assets/shackle-49.png"/>
+                <CGImage src="assets/shackle-50.png"/>
+
+          </values>
+	    </animation>
+	  </LKStateTransitionElement>
+      <LKStateTransitionElement final="false" key="contents" targetId="#4">
+          <animation type="CAKeyframeAnimation" calculationMode="discrete" keyPath="contents" duration="1" fillMode="backwards" timingFunction="linear">
+              <keyTimes>
+                <real value="0.0"/>
+                <real value="0.016666666666666666"/>
+                <real value="0.03333333333333333"/>
+                <real value="0.05"/>
+                <real value="0.06666666666666667"/>
+                <real value="0.08333333333333333"/>
+                <real value="0.1"/>
+                <real value="0.11666666666666667"/>
+                <real value="0.13333333333333333"/>
+                <real value="0.15"/>
+                <real value="0.16666666666666666"/>
+                <real value="0.18333333333333332"/>
+                <real value="0.2"/>
+                <real value="0.21666666666666667"/>
+                <real value="0.23333333333333334"/>
+                <real value="0.25"/>
+                <real value="0.26666666666666666"/>
+                <real value="0.2833333333333333"/>
+                <real value="0.3"/>
+                <real value="0.31666666666666665"/>
+                <real value="0.3333333333333333"/>
+                <real value="0.35"/>
+                <real value="0.36666666666666664"/>
+                <real value="0.38333333333333336"/>
+                <real value="0.4"/>
+                <real value="0.4166666666666667"/>
+                <real value="0.43333333333333335"/>
+                <real value="0.45"/>
+                <real value="0.4666666666666667"/>
+                <real value="0.48333333333333334"/>
+                <real value="0.5"/>
+                <real value="0.5166666666666667"/>
+                <real value="0.5333333333333333"/>
+                <real value="0.55"/>
+                <real value="0.5666666666666667"/>
+                <real value="0.5833333333333334"/>
+                <real value="0.6"/>
+                <real value="0.6166666666666667"/>
+                <real value="0.6333333333333333"/>
+                <real value="0.65"/>
+                <real value="0.6666666666666666"/>
+                <real value="0.6833333333333333"/>
+                <real value="0.7"/>
+                <real value="0.7166666666666667"/>
+                <real value="0.7333333333333333"/>
+                <real value="0.75"/>
+                <real value="0.7666666666666667"/>
+                <real value="0.7833333333333333"/>
+                <real value="0.8"/>
+                <real value="0.8166666666666667"/>
+                <real value="0.8333333333333334"/>
+
+              </keyTimes>
+              <values>
+                <CGImage src="assets/shadow-0.png"/>
+                <CGImage src="assets/shadow-1.png"/>
+                <CGImage src="assets/shadow-2.png"/>
+                <CGImage src="assets/shadow-3.png"/>
+                <CGImage src="assets/shadow-4.png"/>
+                <CGImage src="assets/shadow-5.png"/>
+                <CGImage src="assets/shadow-6.png"/>
+                <CGImage src="assets/shadow-7.png"/>
+                <CGImage src="assets/shadow-8.png"/>
+                <CGImage src="assets/shadow-9.png"/>
+                <CGImage src="assets/shadow-10.png"/>
+                <CGImage src="assets/shadow-11.png"/>
+                <CGImage src="assets/shadow-12.png"/>
+                <CGImage src="assets/shadow-13.png"/>
+                <CGImage src="assets/shadow-14.png"/>
+                <CGImage src="assets/shadow-15.png"/>
+                <CGImage src="assets/shadow-16.png"/>
+                <CGImage src="assets/shadow-17.png"/>
+                <CGImage src="assets/shadow-18.png"/>
+                <CGImage src="assets/shadow-19.png"/>
+                <CGImage src="assets/shadow-20.png"/>
+                <CGImage src="assets/shadow-21.png"/>
+                <CGImage src="assets/shadow-22.png"/>
+                <CGImage src="assets/shadow-23.png"/>
+                <CGImage src="assets/shadow-24.png"/>
+                <CGImage src="assets/shadow-25.png"/>
+                <CGImage src="assets/shadow-26.png"/>
+                <CGImage src="assets/shadow-27.png"/>
+                <CGImage src="assets/shadow-28.png"/>
+                <CGImage src="assets/shadow-29.png"/>
+                <CGImage src="assets/shadow-30.png"/>
+                <CGImage src="assets/shadow-31.png"/>
+                <CGImage src="assets/shadow-32.png"/>
+                <CGImage src="assets/shadow-33.png"/>
+                <CGImage src="assets/shadow-34.png"/>
+                <CGImage src="assets/shadow-35.png"/>
+                <CGImage src="assets/shadow-36.png"/>
+                <CGImage src="assets/shadow-37.png"/>
+                <CGImage src="assets/shadow-38.png"/>
+                <CGImage src="assets/shadow-39.png"/>
+                <CGImage src="assets/shadow-40.png"/>
+                <CGImage src="assets/shadow-41.png"/>
+                <CGImage src="assets/shadow-42.png"/>
+                <CGImage src="assets/shadow-43.png"/>
+                <CGImage src="assets/shadow-44.png"/>
+                <CGImage src="assets/shadow-45.png"/>
+                <CGImage src="assets/shadow-46.png"/>
+                <CGImage src="assets/shadow-47.png"/>
+                <CGImage src="assets/shadow-48.png"/>
+                <CGImage src="assets/shadow-49.png"/>
+                <CGImage src="assets/shadow-50.png"/>
+
+              </values>
+          </animation>
+      </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Unlocked" toState="*">
+	<elements/>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Sleep">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Sleep" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Error">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.2" fillMode="both" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CASpringAnimation" damping="40" mass="3" stiffness="2200" keyPath="position.x" beginTime="0.075" duration="0.78" fillMode="both" speed="1.4"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Error" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+    </stateTransitions>
+  </CALayer>
+</caml>
