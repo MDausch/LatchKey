@@ -1,7 +1,7 @@
 Package: ch.mdaus.latchkey
 Name: LatchKey
 Depends: mobilesubstrate, org.thebigboss.libcolorpicker
-Version: 2.1.2
+Version: 2.1.3
 Architecture: iphoneos-arm
 Description: Move and theme the Face-ID lock glyph 
 Depiction: https://repo.daus.ch/depictions/?p=ch.mdaus.latchkey
