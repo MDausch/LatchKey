@@ -1,6 +1,8 @@
 ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
+export SDKVERSION = 11.2
+export SDKROOT = $(THEOS)/sdks/iPhoneOS11.2.sdk
 
 TWEAK_NAME = LatchKey
 LatchKey_FILES = LatchKey.xm

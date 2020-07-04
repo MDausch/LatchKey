@@ -8,7 +8,7 @@
 	        <CALayer id="#2" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 147.0" contentsFormat="RGBA8" name="shake" position="73.5 73.5">
 	          <sublayers>
 	            <CALayer id="#1" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 147.0" contentsFormat="RGBA8" name="shackle" opacity="1" position="73.5 73.5">
-		          <contents type="CGImage" src="assets/Face_ID_1.png"/>
+		          <contents type="CGImage" src="assets/Lenny_ID_1.png"/>
 	            </CALayer>
 	          </sublayers>
 	        </CALayer>
@@ -30,7 +30,7 @@
       <LKState name="Unlocked">
         <elements>
           <LKStateSetValue final="false" targetId="#1" keyPath="contents">
-            <value type="CGImage" src="assets/Face_ID_37.png"/>
+            <value type="CGImage" src="assets/Lenny_ID_37.png"/>
           </LKStateSetValue>
         </elements>
       </LKState>
@@ -90,43 +90,43 @@
                       <real value="0.6"/>
               </keyTimes>
               <values>
-                      <CGImage src="assets/Face_ID_1.png"/>
-                      <CGImage src="assets/Face_ID_2.png"/>
-                      <CGImage src="assets/Face_ID_3.png"/>
-                      <CGImage src="assets/Face_ID_4.png"/>
-                      <CGImage src="assets/Face_ID_5.png"/>
-                      <CGImage src="assets/Face_ID_6.png"/>
-                      <CGImage src="assets/Face_ID_7.png"/>
-                      <CGImage src="assets/Face_ID_8.png"/>
-                      <CGImage src="assets/Face_ID_9.png"/>
-                      <CGImage src="assets/Face_ID_10.png"/>
-                      <CGImage src="assets/Face_ID_11.png"/>
-                      <CGImage src="assets/Face_ID_12.png"/>
-                      <CGImage src="assets/Face_ID_13.png"/>
-                      <CGImage src="assets/Face_ID_14.png"/>
-                      <CGImage src="assets/Face_ID_15.png"/>
-                      <CGImage src="assets/Face_ID_16.png"/>
-                      <CGImage src="assets/Face_ID_17.png"/>
-                      <CGImage src="assets/Face_ID_18.png"/>
-                      <CGImage src="assets/Face_ID_19.png"/>
-                      <CGImage src="assets/Face_ID_20.png"/>
-                      <CGImage src="assets/Face_ID_21.png"/>
-                      <CGImage src="assets/Face_ID_22.png"/>
-                      <CGImage src="assets/Face_ID_23.png"/>
-                      <CGImage src="assets/Face_ID_24.png"/>
-                      <CGImage src="assets/Face_ID_25.png"/>
-                      <CGImage src="assets/Face_ID_26.png"/>
-                      <CGImage src="assets/Face_ID_27.png"/>
-                      <CGImage src="assets/Face_ID_28.png"/>
-                      <CGImage src="assets/Face_ID_29.png"/>
-                      <CGImage src="assets/Face_ID_30.png"/>
-                      <CGImage src="assets/Face_ID_31.png"/>
-                      <CGImage src="assets/Face_ID_32.png"/>
-                      <CGImage src="assets/Face_ID_33.png"/>
-                      <CGImage src="assets/Face_ID_34.png"/>
-                      <CGImage src="assets/Face_ID_35.png"/>
-                      <CGImage src="assets/Face_ID_36.png"/>
-                      <CGImage src="assets/Face_ID_37.png"/>
+                      <CGImage src="assets/Lenny_ID_1.png"/>
+                      <CGImage src="assets/Lenny_ID_2.png"/>
+                      <CGImage src="assets/Lenny_ID_3.png"/>
+                      <CGImage src="assets/Lenny_ID_4.png"/>
+                      <CGImage src="assets/Lenny_ID_5.png"/>
+                      <CGImage src="assets/Lenny_ID_6.png"/>
+                      <CGImage src="assets/Lenny_ID_7.png"/>
+                      <CGImage src="assets/Lenny_ID_8.png"/>
+                      <CGImage src="assets/Lenny_ID_9.png"/>
+                      <CGImage src="assets/Lenny_ID_10.png"/>
+                      <CGImage src="assets/Lenny_ID_11.png"/>
+                      <CGImage src="assets/Lenny_ID_12.png"/>
+                      <CGImage src="assets/Lenny_ID_13.png"/>
+                      <CGImage src="assets/Lenny_ID_14.png"/>
+                      <CGImage src="assets/Lenny_ID_15.png"/>
+                      <CGImage src="assets/Lenny_ID_16.png"/>
+                      <CGImage src="assets/Lenny_ID_17.png"/>
+                      <CGImage src="assets/Lenny_ID_18.png"/>
+                      <CGImage src="assets/Lenny_ID_19.png"/>
+                      <CGImage src="assets/Lenny_ID_20.png"/>
+                      <CGImage src="assets/Lenny_ID_21.png"/>
+                      <CGImage src="assets/Lenny_ID_22.png"/>
+                      <CGImage src="assets/Lenny_ID_23.png"/>
+                      <CGImage src="assets/Lenny_ID_24.png"/>
+                      <CGImage src="assets/Lenny_ID_25.png"/>
+                      <CGImage src="assets/Lenny_ID_26.png"/>
+                      <CGImage src="assets/Lenny_ID_27.png"/>
+                      <CGImage src="assets/Lenny_ID_28.png"/>
+                      <CGImage src="assets/Lenny_ID_29.png"/>
+                      <CGImage src="assets/Lenny_ID_30.png"/>
+                      <CGImage src="assets/Lenny_ID_31.png"/>
+                      <CGImage src="assets/Lenny_ID_32.png"/>
+                      <CGImage src="assets/Lenny_ID_33.png"/>
+                      <CGImage src="assets/Lenny_ID_34.png"/>
+                      <CGImage src="assets/Lenny_ID_35.png"/>
+                      <CGImage src="assets/Lenny_ID_36.png"/>
+                      <CGImage src="assets/Lenny_ID_37.png"/>
                 </values>
             </animation>
           </LKStateTransitionElement>
