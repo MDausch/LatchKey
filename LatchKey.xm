@@ -62,7 +62,6 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
                         name:@"ArtsyColorLockscreen"
                         object:nil];
 
-  //Watch for battery changes
   [[NSNotificationCenter defaultCenter] addObserver:self
                       selector:@selector(handleColoring:)
                       name:@"ArtsyUndoLockscreen"
@@ -75,7 +74,7 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
   %orig;
 }
 
-// Stop the use faceID to unlock prompt
+// Stop the "use faceID to unlock" prompt
 -(void)setState:(long long)arg1 animated:(BOOL)arg2 options:(long long)arg3 completion:(/*^block*/id)arg4 {
   if(enabled && (arg1 == 19 || arg1 == 16)) {
     arg1 = 1;
@@ -92,7 +91,7 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
     // Get lock View
     SBUICAPackageView *lock = MSHookIvar<SBUICAPackageView*>(self, "_lockView");
 
-    // For some unknown reason the lockview's y position is nowhere near where the actual position is, 
+    // For some reason the lockview's y position is nowhere near where the actual position is, 
     // so we use the coaching view to get the base position.
     if(@available(iOS 12.0, *)) {
       UIView *coachingView = MSHookIvar<UIView*>(self, "_lazy_faceIDCoachingView");
@@ -260,7 +259,6 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
   return %orig(currentThemeName,themeBundle);
 }
 %end 
-
 
 // Override Carrier Name
 // TODO make this only for the lockscreen and not control center

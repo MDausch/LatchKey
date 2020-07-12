@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<caml xmlns="http://www.apple.com/CoreAnimation/1.0">
+  <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 69.0 100.0" contentsFormat="RGBA8" name="root" position="34.5 50.0">
+    <sublayers>
+      <CALayer id="#3" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" geometryFlipped="1" name="container" position="34.5 50.0">
+	      <sublayers>
+	        <CALayer id="#2" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="shake" position="73.5 66.0">
+	          <sublayers>
+	            <CALayer id="#1" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="shackle" opacity="1" position="73.5 66.0">
+		          <contents type="CGImage" src="assets/Face_ID_White_1.png"/>
+		          <sublayers>
+                    <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 147.0 132.0" contentsFormat="RGBA8" name="body" position="73.5 66.0">
+                      <contents type="CGImage" src="assets/empty.png"/>
+                    </CALayer>
+		          </sublayers>
+	            </CALayer>
+	          </sublayers>
+	        </CALayer>
+	      </sublayers>
+        </CALayer>
+      </sublayers>
+    <states>
+      <LKState name="Sleep">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="transform.scale.xy">
+	    <value type="real" value="0.75"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="opacity">
+	    <value type="integer" value="0"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Locked"/>
+      <LKState name="Unlocked">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#1" keyPath="contents">
+	    <value type="CGImage" src="assets/Face_ID_White_21.png"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+      <LKState name="Error">
+	<elements>
+	  <LKStateSetValue final="false" targetId="#2" keyPath="position.x">
+	    <value type="real" value="113.5"/>
+	  </LKStateSetValue>
+	  <LKStateSetValue final="false" targetId="#3" keyPath="position.x">
+	    <value type="real" value="-5.5"/>
+	  </LKStateSetValue>
+	</elements>
+      </LKState>
+    </states>
+    <stateTransitions>
+      <LKStateTransition fromState="*" toState="Unlocked">
+	<elements>
+	  <LKStateTransitionElement final="false" key="contents" targetId="#1">
+	    <animation type="CAKeyframeAnimation" calculationMode="discrete" keyPath="contents" duration="1" fillMode="backwards" timingFunction="linear">
+	      <keyTimes>
+                <real value="0"/>
+                <real value="0.025"/>
+                <real value="0.05"/>
+                <real value="0.075"/>
+                <real value="0.1"/>
+                <real value="0.125"/>
+                <real value="0.15"/>
+                <real value="0.175"/>
+                <real value="0.2"/>
+                <real value="0.225"/>
+                <real value="0.25"/>
+                <real value="0.275"/>
+                <real value="0.3"/>
+                <real value="0.325"/>
+                <real value="0.35"/>
+                <real value="0.375"/>
+                <real value="0.4"/>
+                <real value="0.425"/>
+                <real value="0.45"/>
+                <real value="0.475"/>
+                <real value="0.5"/>
+                <real value="0.525"/>
+	      </keyTimes>
+	      <values>
+                <CGImage src="assets/Face_ID_White_1.png"/>
+                <CGImage src="assets/Face_ID_White_2.png"/>
+                <CGImage src="assets/Face_ID_White_3.png"/>
+                <CGImage src="assets/Face_ID_White_4.png"/>
+                <CGImage src="assets/Face_ID_White_5.png"/>
+                <CGImage src="assets/Face_ID_White_6.png"/>
+                <CGImage src="assets/Face_ID_White_7.png"/>
+                <CGImage src="assets/Face_ID_White_8.png"/>
+                <CGImage src="assets/Face_ID_White_9.png"/>
+                <CGImage src="assets/Face_ID_White_10.png"/>
+                <CGImage src="assets/Face_ID_White_11.png"/>
+                <CGImage src="assets/Face_ID_White_12.png"/>
+                <CGImage src="assets/Face_ID_White_13.png"/>
+                <CGImage src="assets/Face_ID_White_14.png"/>
+                <CGImage src="assets/Face_ID_White_15.png"/>
+                <CGImage src="assets/Face_ID_White_16.png"/>
+                <CGImage src="assets/Face_ID_White_17.png"/>
+                <CGImage src="assets/Face_ID_White_18.png"/>
+                <CGImage src="assets/Face_ID_White_19.png"/>
+                <CGImage src="assets/Face_ID_White_20.png"/>
+                <CGImage src="assets/Face_ID_White_21.png"/>
+          </values>
+	    </animation>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Unlocked" toState="*">
+	<elements/>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Sleep">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Sleep" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="transform.scale.xy" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="transform.scale.xy" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="opacity" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="opacity" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="*" toState="Error">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.2" fillMode="both" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CASpringAnimation" damping="40" mass="3" stiffness="2200" keyPath="position.x" beginTime="0.075" duration="0.78" fillMode="both" speed="1.4"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+      <LKStateTransition fromState="Error" toState="*">
+	<elements>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#3">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	  <LKStateTransitionElement final="false" key="position.x" targetId="#2">
+	    <animation type="CABasicAnimation" keyPath="position.x" duration="0.25" fillMode="backwards" timingFunction="default"/>
+	  </LKStateTransitionElement>
+	</elements>
+      </LKStateTransition>
+    </stateTransitions>
+  </CALayer>
+</caml>

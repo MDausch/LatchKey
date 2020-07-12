@@ -73,15 +73,6 @@
             <key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
 		</dict>
 
-    	<dict>
-			<key>cell</key>                   <string>PSSwitchCell</string>
-			<key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
-			<key>default</key>                <false/>
-			<key>defaults</key>               <string>ch.mdaus.latchkey.settingschanged</string>
-			<key>key</key>                    <string>useKalmColor</string>
-			<key>label</key>                  <string>Use Kalm Color</string>
-		</dict>
-
 		<dict>
 			<key>cell</key>                   <string>PSSwitchCell</string>
 			<key>PostNotification</key>       <string>ch.mdaus.latchkey.settingschanged</string>
